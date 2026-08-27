@@ -1,619 +1,977 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Happy Raksha Bandhan Kajal Didi ❤️</title>
+<title>For Kajal Didi ❤️ | Happy Raksha Bandhan</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --red:#a9143d;
+  --pink:#f36b8b;
+  --cream:#fff8ed;
+  --gold:#e7ad45;
+  --dark:#391521;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #fff0f5, #ffe4ec, #fff8e7);
-    color: #5b2035;
-    overflow-x: hidden;
+body{
+  min-height:100vh;
+  font-family:Poppins,sans-serif;
+  color:var(--dark);
+  background:
+    radial-gradient(circle at 15% 20%,#ffd9e4 0 7%,transparent 25%),
+    radial-gradient(circle at 85% 80%,#ffe9bd 0 8%,transparent 25%),
+    linear-gradient(135deg,#fff1f5,#fffaf0);
+  overflow-x:hidden;
 }
 
-header {
-    text-align: center;
-    padding: 40px 20px 25px;
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.16;
+  background-image:radial-gradient(#a9143d 1px,transparent 1px);
+  background-size:22px 22px;
 }
 
-header h1 {
-    font-size: clamp(2rem, 6vw, 4rem);
-    color: #d6336c;
-    margin-bottom: 10px;
+.app{
+  width:min(960px,94%);
+  margin:28px auto;
+  position:relative;
 }
 
-header p {
-    font-size: 1.1rem;
+.card{
+  min-height:650px;
+  background:rgba(255,250,240,.94);
+  border:5px solid var(--red);
+  border-radius:32px;
+  padding:30px;
+  box-shadow:0 25px 70px #7b18352b;
+  position:relative;
+  overflow:hidden;
 }
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
+.card:before,
+.card:after{
+  content:"🪷";
+  position:absolute;
+  font-size:54px;
+  opacity:.8;
 }
 
-.card {
-    background: rgba(255,255,255,.8);
-    border-radius: 25px;
-    padding: 25px;
-    margin: 25px 0;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(120,40,70,.12);
+.card:before{top:10px;left:14px}
+.card:after{bottom:10px;right:14px}
+
+.screen{
+  display:none;
+  min-height:580px;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  flex-direction:column;
+  animation:show .65s ease;
 }
 
-.photos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 20px;
-    margin-top: 20px;
+.screen.active{display:flex}
+
+@keyframes show{
+  from{opacity:0;transform:translateY(18px) scale(.98)}
+  to{opacity:1;transform:none}
 }
 
-.photo-box {
-    background: white;
-    padding: 12px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.1);
+.badge{
+  display:inline-block;
+  padding:8px 16px;
+  border-radius:30px;
+  background:#ffe0e8;
+  color:var(--red);
+  font-weight:600;
+  margin-bottom:15px;
 }
 
-.photo-box img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 15px;
+h1{
+  font-family:Pacifico,cursive;
+  color:var(--red);
+  font-size:clamp(38px,7vw,70px);
+  line-height:1.1;
+  margin:8px 0 16px;
 }
 
-.photo-box h3 {
-    margin-top: 10px;
+h2{
+  color:var(--red);
+  font-size:clamp(28px,5vw,45px);
+  margin-bottom:14px;
 }
 
-.message {
-    font-size: 1.15rem;
-    line-height: 1.8;
+p{
+  font-size:18px;
+  line-height:1.8;
+  max-width:690px;
+  margin:8px auto 22px;
 }
 
-button {
-    border: none;
-    border-radius: 50px;
-    padding: 14px 22px;
-    margin: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    background: #d6336c;
-    color: white;
-    transition: .2s;
-    box-shadow: 0 5px 15px rgba(214,51,108,.25);
+button{
+  border:0;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--red),#df315c);
+  color:white;
+  padding:14px 25px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 22px #a9143d35;
+  transition:.25s;
+  margin:6px;
 }
 
-button:hover {
-    transform: translateY(-3px) scale(1.03);
+button:hover{
+  transform:translateY(-3px) scale(1.03);
 }
 
-button:active {
-    transform: scale(.95);
+.heart{
+  font-size:76px;
+  animation:beat 1.15s infinite;
 }
 
-.gifts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap: 15px;
-    margin-top: 20px;
+@keyframes beat{
+  50%{transform:scale(1.16)}
 }
 
-.gift {
-    background: #fff;
-    border-radius: 20px;
-    padding: 25px 15px;
-    cursor: pointer;
-    transition: .3s;
-    box-shadow: 0 7px 20px rgba(0,0,0,.1);
+.rakhi{
+  font-size:105px;
+  animation:swing 2s infinite ease-in-out;
 }
 
-.gift:hover {
-    transform: translateY(-6px) rotate(-1deg);
+@keyframes swing{
+  0%,100%{transform:rotate(-8deg)}
+  50%{transform:rotate(8deg)}
 }
 
-.gift .emoji {
-    font-size: 4rem;
-    display: block;
-    margin-bottom: 10px;
+.photos{
+  width:min(760px,100%);
+  display:grid;
+  grid-template-columns:1fr 1.2fr 1fr;
+  gap:12px;
+  align-items:center;
+  margin:18px auto 22px;
 }
 
-.gift h3 {
-    color: #d6336c;
+.photo{
+  width:100%;
+  height:245px;
+  object-fit:cover;
+  border-radius:20px;
+  border:4px solid white;
+  box-shadow:0 8px 25px #0002;
 }
 
-#giftMessage {
-    min-height: 50px;
-    margin-top: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
+.photo.center{height:290px}
+
+.caption{
+  font-weight:700;
+  color:var(--red);
+  margin-top:10px;
 }
 
-.secret {
-    background: linear-gradient(135deg,#7b2cbf,#d6336c);
+.gifts{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:20px 0;
 }
 
-#secretMessage {
-    display: none;
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    background: #fff;
-    font-size: 1.2rem;
-    line-height: 1.7;
+.gift{
+  width:145px;
+  height:145px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#ff7897,#c91d4c);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:70px;
+  cursor:pointer;
+  box-shadow:0 15px 25px #a9143d30;
+  transition:.25s;
+  position:relative;
 }
 
-footer {
-    text-align: center;
-    padding: 35px 15px;
-    font-size: .95rem;
+.gift:hover{
+  transform:translateY(-10px) rotate(2deg);
 }
 
-#confettiContainer {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 9999;
+.gift.open{
+  animation:giftopen .65s;
 }
 
-.confetti {
-    position: absolute;
-    top: -20px;
-    font-size: 20px;
-    animation: fall linear forwards;
+@keyframes giftopen{
+  35%{transform:scale(1.18) rotate(8deg)}
+  100%{transform:scale(1)}
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(720deg);
-    }
+.gift:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  border:3px solid #ffd4df;
+  opacity:.5;
 }
 
-.music-control {
-    position: fixed;
-    right: 15px;
-    bottom: 15px;
-    z-index: 1000;
-    background: white;
-    color: #d6336c;
-    border: 2px solid #d6336c;
+#giftMessage{
+  min-height:34px;
+  color:var(--red);
+  font-weight:700;
+  font-size:18px;
+}
+
+.memory{
+  width:min(800px,100%);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:15px 0 20px;
+}
+
+.memory img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:18px;
+  border:3px solid white;
+  box-shadow:0 8px 20px #0002;
+}
+
+.note{
+  background:#fff0f3;
+  border-left:5px solid var(--pink);
+  padding:18px;
+  border-radius:15px;
+  text-align:left;
+}
+
+.final-heart{
+  font-size:90px;
+  animation:beat 1s infinite;
+}
+
+.small{
+  font-size:13px;
+  opacity:.65;
+}
+
+.progress{
+  position:absolute;
+  top:15px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:12px;
+  color:#9c5265;
+  z-index:2;
+}
+
+.secret{
+  margin-top:10px;
+  background:#fff0c8;
+  color:#7c5010;
+  box-shadow:none;
+}
+
+#surprise{
+  display:none;
+  margin-top:15px;
+  padding:18px 22px;
+  border-radius:18px;
+  background:#27131a;
+  color:white;
+  font-weight:700;
+  animation:pop .5s;
+}
+
+@keyframes pop{
+  from{transform:scale(.7);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+/* MUSIC BUTTON */
+.music-btn{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:10000;
+  background:white;
+  color:var(--red);
+  border:3px solid var(--red);
+  padding:12px 18px;
+}
+
+/* SOUND STATUS */
+.sound-status{
+  position:fixed;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  background:#391521;
+  color:white;
+  padding:8px 16px;
+  border-radius:30px;
+  font-size:13px;
+  opacity:0;
+  pointer-events:none;
+  z-index:10001;
+  transition:.3s;
+}
+
+.sound-status.show{
+  opacity:1;
+}
+
+@media(max-width:650px){
+
+  .card{
+    padding:20px;
+    min-height:620px;
+  }
+
+  .screen{
+    min-height:570px;
+  }
+
+  .photos{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .photo.center{
+    height:230px;
+  }
+
+  .photo{
+    height:190px;
+  }
+
+  .photos .photo:last-child{
+    display:none;
+  }
+
+  .memory{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .memory img{
+    height:170px;
+  }
+
+  .gift{
+    width:105px;
+    height:105px;
+    font-size:55px;
+  }
+
+  p{
+    font-size:16px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div id="confettiContainer"></div>
+<!-- AUDIO FILES -->
+<audio id="clickSound" preload="auto">
+  <source src="click.mp3" type="audio/mpeg">
+</audio>
 
-<header>
-    <h1>🪢 Happy Raksha Bandhan ❤️</h1>
-    <p>Kajal Didi & Yash</p>
-</header>
+<audio id="gift1Sound" preload="auto">
+  <source src="gift1.mp3" type="audio/mpeg">
+</audio>
 
-<div class="container">
+<audio id="gift2Sound" preload="auto">
+  <source src="gift2.mp3" type="audio/mpeg">
+</audio>
 
-    <!-- MESSAGE -->
-    <section class="card">
-        <h2>💌 Meri Pyari Kajal Didi</h2>
+<audio id="gift3Sound" preload="auto">
+  <source src="gift3.mp3" type="audio/mpeg">
+</audio>
 
-        <p class="message">
-            Didi, Raksha Bandhan ke is special din par
-            main aapko dil se thank you kehna chahta hoon. ❤️
-            <br><br>
+<audio id="gift4Sound" preload="auto">
+  <source src="gift4.mp3" type="audio/mpeg">
+</audio>
 
-            Aap hamesha meri life mein ek special place rakhti hain.
-            Aapki care, support aur pyaar mere liye bahut important hai.
-            <br><br>
+<audio id="backgroundMusic" preload="auto" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-            Bhagwan kare aap hamesha khush rahen,
-            healthy rahen aur aapke saare dreams poore hon. ✨
-            <br><br>
+<div class="sound-status" id="soundStatus"></div>
 
-            <strong>Happy Raksha Bandhan, Kajal Didi! 🪢❤️</strong>
-        </p>
-    </section>
+<div class="app">
 
-    <!-- PHOTOS -->
-    <section class="card">
-        <h2>📸 Hamari Memories</h2>
+<div class="card">
 
-        <div class="photos">
+<div class="progress" id="progress">1 / 8</div>
 
-            <div class="photo-box">
-                <img src="kajal1.jpeg" alt="Kajal Didi">
-                <h3>❤️ Kajal Didi</h3>
-            </div>
+<section class="screen active" id="s1">
 
-            <div class="photo-box">
-                <img src="kajal2.jpeg" alt="Kajal Didi">
-                <h3>🌸 Beautiful Memory</h3>
-            </div>
+<div class="badge">🎀 A little surprise from Yash</div>
 
-            <div class="photo-box">
-                <img src="kajal3.jpeg" alt="Kajal Didi">
-                <h3>😊 Special Moment</h3>
-            </div>
+<div class="heart">❤️</div>
 
-            <div class="photo-box">
-                <img src="kajal4.jpeg" alt="Kajal Didi">
-                <h3>✨ Best Memories</h3>
-            </div>
+<h1>For Kajal Didi</h1>
 
-            <div class="photo-box">
-                <img src="yash.png" alt="Yash">
-                <h3>😎 Yash</h3>
-            </div>
+<p>
+Meri pyaari behen ke liye kuch special banaya hai.
+<br>
+<b>Ready?</b> 👀
+</p>
 
-        </div>
-    </section>
+<button onclick="go(2)">
+OPEN KARO ✨
+</button>
 
-    <!-- GIFTS -->
-    <section class="card">
-        <h2>🎁 Didi ke liye 4 Secret Gifts</h2>
+</section>
 
-        <p style="margin-top:10px;">
-            Har gift par click karke dekhiye 😄❤️
-        </p>
 
-        <div class="gifts">
+<section class="screen" id="s2">
 
-            <div class="gift" onclick="giftClicked(1)">
-                <span class="emoji">🎁</span>
-                <h3>Gift 1</h3>
-                <p>Click karke dekhiye 👀</p>
-            </div>
+<div class="rakhi">🪢</div>
 
-            <div class="gift" onclick="giftClicked(2)">
-                <span class="emoji">🎁</span>
-                <h3>Gift 2</h3>
-                <p>Ek aur surprise 😄</p>
-            </div>
+<h2>Happy Raksha Bandhan, Kajal Didi</h2>
 
-            <div class="gift" onclick="giftClicked(3)">
-                <span class="emoji">🎁</span>
-                <h3>Gift 3</h3>
-                <p>Thoda funny hai 😂</p>
-            </div>
+<p>
+Ye sirf ek Rakhi nahi hai...
+<br>
+ek chhoti si reminder hai ki
+<b>aap mere liye important ho.</b> 🥹
+</p>
 
-            <div class="gift" onclick="giftClicked(4)">
-                <span class="emoji">🎁</span>
-                <h3>Gift 4</h3>
-                <p>Final surprise ✨</p>
-            </div>
+<button onclick="go(3)">
+Aage Chalo 💕
+</button>
 
-        </div>
+</section>
 
-        <div id="giftMessage"></div>
-    </section>
 
-    <!-- SECRET -->
-    <section class="card">
-        <h2>😈 Secret Button</h2>
+<section class="screen" id="s3">
 
-        <button class="secret" onclick="secretSurprise()">
-            🔐 Secret Surprise
-        </button>
+<h2>Happy Raksha Bandhan 📸</h2>
 
-        <div id="secretMessage">
-            💖 Didi, ek baat hamesha yaad rakhna...
-            <br><br>
-            Aap mere liye sirf meri Didi nahi,
-            balki meri life ki ek bahut important person hain.
-            🥰
-            <br><br>
-            <strong>Love & Respect Always, Didi ❤️</strong>
-        </div>
-    </section>
+<div class="photos">
 
-    <!-- BUTTONS -->
-    <section class="card">
-        <h2>✨ Special Buttons</h2>
+<div>
+<img class="photo" src="yash.png">
+<div class="caption">Yash 😎</div>
+</div>
 
-        <button onclick="normalClick()">
-            ❤️ Click Me
-        </button>
+<div>
+<img class="photo center" src="kajal1.jpeg">
+<div class="caption">Kajal Didi</div>
+</div>
 
-        <button onclick="startConfetti()">
-            🎉 Confetti
-        </button>
-    </section>
+<div>
+<img class="photo" src="kajal2.jpeg">
+<div class="caption">Always smiling ✨</div>
+</div>
 
 </div>
 
-<footer>
-    Made with ❤️ by Yash for Kajal Didi
-    <br>
-    🪢 Happy Raksha Bandhan 🪢
-</footer>
+<p class="small">
+Kuch photos sirf photos nahi hoti...
+woh memories ban jaati hain.
+</p>
 
-<!-- MUSIC -->
-<audio id="backgroundMusic" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<button class="music-control" onclick="toggleMusic()">
-    🎵 Music
+<button onclick="go(4)">
+Next 💌
 </button>
 
-<!-- SOUNDS -->
+</section>
 
-<audio id="clickSound">
-    <source src="click.mp3" type="audio/mpeg">
-</audio>
 
-<audio id="gift1Sound">
-    <source src="gift1.mp3" type="audio/mpeg">
-</audio>
+<section class="screen" id="s4">
 
-<audio id="gift2Sound">
-    <source src="gift2.mp3" type="audio/mpeg">
-</audio>
+<div class="heart">🫶</div>
 
-<audio id="gift3Sound">
-    <source src="gift3.mp3" type="audio/mpeg">
-</audio>
+<h2>Ek Baat Sach Mein...</h2>
 
-<audio id="gift4Sound">
-    <source src="gift4.mp3" type="audio/mpeg">
-</audio>
+<div class="note">
+
+Tum hamesha supportive rahi ho.
+aur shayad main har baar bol nahi pata,
+lekin main genuinely uski value karta hoon. ❤️
+
+<br><br>
+
+Life mein chahe jo bhi ho,
+bas khush rehna aur apne dreams ke peeche jaana.
+
+</div>
+
+<button onclick="go(5)">
+Ek Surprise Aur Hai 👀
+</button>
+
+</section>
+
+
+<section class="screen" id="s5">
+
+<div class="emoji" style="font-size:70px">
+🎁
+</div>
+
+<h2>3 Surprise Gifts</h2>
+
+<p>
+Jo mann kare us gift ko open karo. 😌
+</p>
+
+<div class="gifts">
+
+<div class="gift" onclick="gift(this,1)">
+🎁
+</div>
+
+<div class="gift" onclick="gift(this,2)">
+🎁
+</div>
+
+<div class="gift" onclick="gift(this,3)">
+🎁
+</div>
+
+<div class="gift" onclick="gift(this,4)">
+🎁
+</div>
+
+</div>
+
+<div id="giftMessage">
+Koi ek choose karo 👀
+</div>
+
+<button onclick="go(6)">
+Next 💖
+</button>
+
+</section>
+
+
+<section class="screen" id="s6">
+
+<h2>Thodi Aur Photos 📸</h2>
+
+<div class="memory">
+
+<img src="kajal2.jpeg">
+<img src="kajal3.jpeg">
+<img src="kajal4.jpeg">
+
+</div>
+
+<p>
+Ek supportive sister milna bhi ek blessing hai. ❤️
+</p>
+
+<button onclick="go(7)">
+Last Surprise 😈
+</button>
+
+</section>
+
+
+<section class="screen" id="s7">
+
+<div style="font-size:78px">
+😈🎀
+</div>
+
+<h2>SECRET BUTTON</h2>
+
+<p>
+Warning: is button ko click karne ki zarurat nahi hai.
+<br>
+<b>Seriously.</b> 😂
+</p>
+
+<button class="secret" onclick="secret()">
+DO NOT CLICK 🚫
+</button>
+
+<div id="surprise">
+
+😂 Congratulations Kajal Didi!
+
+<br>
+
+Tumne successfully woh button click kar diya
+jise click nahi karna tha. 😭
+
+<br>
+
+— Yash
+
+</div>
+
+<button onclick="go(8)">
+Okay Ab Final ❤️
+</button>
+
+</section>
+
+
+<section class="screen" id="s8">
+
+<div class="final-heart">
+❤️
+</div>
+
+<h1>
+Happy Raksha Bandhan
+</h1>
+
+<h2>
+Kajal Didi 🪢
+</h2>
+
+<p>
+
+Aapki har wish poori ho,
+<br>
+
+tum hamesha khush raho,
+<br>
+
+aur life mein jo chahe woh mile. ✨
+
+<br><br>
+
+<b>
+Thank you for always being supportive.
+</b>
+
+<br>
+
+Love you, Sis. ❤️
+
+</p>
+
+<button onclick="celebrate()">
+CELEBRATE 🎉
+</button>
+
+<div class="small">
+Made with ❤️ by Yash
+</div>
+
+</section>
+
+</div>
+</div>
+
+
+<!-- MUSIC BUTTON -->
+
+<button
+class="music-btn"
+id="musicButton"
+onclick="toggleMusic()"
+>
+🎵 Music OFF
+</button>
+
 
 <script>
 
+let current = 1;
 let musicPlaying = false;
 
-/* =========================
-   SOUND FUNCTION
-========================= */
 
-function playSound(id) {
+/* ==============================
+   PLAY SOUND
+============================== */
 
-    const sound = document.getElementById(id);
+function playSound(id){
 
-    if (!sound) return;
+  const audio = document.getElementById(id);
 
-    sound.currentTime = 0;
+  if(!audio) return;
 
-    sound.play().catch(() => {});
+  audio.pause();
+  audio.currentTime = 0;
+
+  audio.play().catch(() => {
+
+    showSoundStatus(
+      "🔊 Sound start karne ke liye page par click karein"
+    );
+
+  });
+
 }
 
 
-/* =========================
-   NORMAL BUTTON
-========================= */
+/* ==============================
+   SOUND STATUS
+============================== */
 
-function normalClick() {
+function showSoundStatus(text){
 
-    playSound("clickSound");
+  const status =
+    document.getElementById("soundStatus");
 
-    document.body.style.transform = "scale(1.01)";
+  status.textContent = text;
 
-    setTimeout(() => {
-        document.body.style.transform = "scale(1)";
-    }, 100);
+  status.classList.add("show");
 
-    startConfetti();
+  setTimeout(() => {
+
+    status.classList.remove("show");
+
+  },2500);
+
 }
 
 
-/* =========================
+/* ==============================
+   PAGE NAVIGATION
+============================== */
+
+function go(n){
+
+  playSound("clickSound");
+
+  document
+    .querySelectorAll(".screen")
+    .forEach(x => x.classList.remove("active"));
+
+  document
+    .getElementById("s"+n)
+    .classList.add("active");
+
+  current = n;
+
+  document
+    .getElementById("progress")
+    .textContent = n + " / 8";
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* ==============================
    GIFT SYSTEM
-========================= */
+============================== */
 
-function giftClicked(number) {
+function gift(el,n){
 
-    playSound("gift" + number + "Sound");
+  el.classList.remove("open");
 
-    const message = document.getElementById("giftMessage");
+  void el.offsetWidth;
 
-    if (number === 1) {
+  el.classList.add("open");
 
-        message.innerHTML =
-        "🎉 HURRAAA! Didi ke liye pehla surprise! ❤️";
+  const messages = [
 
-        startConfetti();
+    "🎉 HURRAAA! Didi ke liye unlimited happiness aur good vibes! ❤️",
 
-    }
+    "😄 YEEEEEE! Kajal Didi ke liye ek special surprise! 🎁",
 
-    else if (number === 2) {
+    "😂 Ohooo! Surprise ke saath thodi masti bhi zaroori hai! 😜",
 
-        message.innerHTML =
-        "😄 YEEEEEE! Didi ke liye ek aur special surprise! 🎁";
+    "✨ SPECIAL GIFT! Kajal Didi, aap hamesha khush rahen! ❤️"
 
-        startConfetti();
+  ];
 
-    }
+  document
+    .getElementById("giftMessage")
+    .innerHTML = messages[n-1];
 
-    else if (number === 3) {
+  playSound("gift" + n + "Sound");
 
-        message.innerHTML =
-        "😂 Ohooo! Surprise ke saath thodi masti bhi zaroori hai! 😜";
+  confetti(25);
 
-        startConfetti();
-
-    }
-
-    else if (number === 4) {
-
-        message.innerHTML =
-        "✨ SPECIAL SURPRISE! Kajal Didi, aap duniya ki best Didi hain! ❤️";
-
-        startConfetti();
-        startConfetti();
-
-    }
 }
 
 
-/* =========================
+/* ==============================
    SECRET BUTTON
-========================= */
+============================== */
 
-function secretSurprise() {
+function secret(){
 
-    playSound("gift4Sound");
+  playSound("gift4Sound");
 
-    const secret = document.getElementById("secretMessage");
+  document
+    .getElementById("surprise")
+    .style.display = "block";
 
-    if (secret.style.display === "block") {
+  confetti(30);
 
-        secret.style.display = "none";
-
-    } else {
-
-        secret.style.display = "block";
-
-        startConfetti();
-    }
 }
 
 
-/* =========================
+/* ==============================
+   FINAL CELEBRATION
+============================== */
+
+function celebrate(){
+
+  playSound("gift4Sound");
+
+  confetti(100);
+
+  setTimeout(() => {
+
+    alert(
+      "Happy Raksha Bandhan, Kajal Didi — Yash ❤️"
+    );
+
+  },500);
+
+}
+
+
+/* ==============================
    MUSIC
-========================= */
+============================== */
 
-function toggleMusic() {
+function toggleMusic(){
 
-    const music = document.getElementById("backgroundMusic");
+  const music =
+    document.getElementById("backgroundMusic");
 
-    if (!musicPlaying) {
+  const button =
+    document.getElementById("musicButton");
 
-        music.play().then(() => {
+  if(!musicPlaying){
 
-            musicPlaying = true;
+    music.play().then(() => {
 
-            document.querySelector(".music-control").innerHTML =
-            "⏸️ Music";
+      musicPlaying = true;
 
-        }).catch(() => {
+      button.textContent =
+        "⏸️ Music ON";
 
-            alert("Music start karne ke liye dobara click kijiye 🎵");
+    }).catch(() => {
 
-        });
-
-    } else {
-
-        music.pause();
-
-        musicPlaying = false;
-
-        document.querySelector(".music-control").innerHTML =
-        "🎵 Music";
-    }
-}
-
-
-/* =========================
-   CONFETTI
-========================= */
-
-function startConfetti() {
-
-    const container =
-    document.getElementById("confettiContainer");
-
-    const emojis = [
-        "🎉",
-        "❤️",
-        "💖",
-        "✨",
-        "🎀",
-        "🌸",
-        "🪢",
-        "🎁"
-    ];
-
-    for (let i = 0; i < 45; i++) {
-
-        const confetti =
-        document.createElement("div");
-
-        confetti.className = "confetti";
-
-        confetti.innerHTML =
-        emojis[Math.floor(Math.random() * emojis.length)];
-
-        confetti.style.left =
-        Math.random() * 100 + "vw";
-
-        confetti.style.animationDuration =
-        (2 + Math.random() * 3) + "s";
-
-        confetti.style.animationDelay =
-        Math.random() * .5 + "s";
-
-        container.appendChild(confetti);
-
-        setTimeout(() => {
-
-            confetti.remove();
-
-        }, 5500);
-    }
-}
-
-
-/* =========================
-   MAKE ALL NORMAL BUTTONS
-   HAVE CLICK SOUND
-========================= */
-
-document.querySelectorAll("button").forEach(button => {
-
-    button.addEventListener("click", function() {
-
-        /*
-        Gift aur secret buttons ke apne sounds hain,
-        isliye unmein normal click sound nahi lagayenge.
-        */
-
-        const isGift =
-        button.closest(".gift");
-
-        const isSecret =
-        button.classList.contains("secret");
-
-        const isMusic =
-        button.classList.contains("music-control");
-
-        if (!isGift && !isSecret && !isMusic) {
-
-            playSound("clickSound");
-
-        }
+      showSoundStatus(
+        "🎵 Music start nahi hua — dobara click karein"
+      );
 
     });
 
-});
+  }else{
+
+    music.pause();
+
+    musicPlaying = false;
+
+    button.textContent =
+      "🎵 Music OFF";
+
+  }
+
+}
 
 
-/* =========================
-   FIRST USER INTERACTION
-   MUSIC CAN START AFTER CLICK
-========================= */
+/* ==============================
+   CONFETTI
+============================== */
 
-document.addEventListener("click", function() {
+function confetti(count){
 
-    const music =
-    document.getElementById("backgroundMusic");
+  const icons = [
+    '❤️',
+    '💖',
+    '🌸',
+    '✨',
+    '🎀',
+    '🪷',
+    '🪢',
+    '💕'
+  ];
+
+  for(let i=0;i<count;i++){
+
+    const x =
+      document.createElement('div');
+
+    x.textContent =
+      icons[
+        Math.floor(
+          Math.random()*icons.length
+        )
+      ];
+
+    x.style.position = 'fixed';
+
+    x.style.left =
+      Math.random()*100 + 'vw';
+
+    x.style.top = '-30px';
+
+    x.style.fontSize =
+      (16 + Math.random()*22) + 'px';
+
+    x.style.zIndex = 9999;
+
+    x.style.pointerEvents = 'none';
+
+    x.style.transition =
+      'transform ' +
+      (2 + Math.random()*2) +
+      's linear, opacity 3s';
+
+    document.body.appendChild(x);
+
+    requestAnimationFrame(() => {
+
+      x.style.transform =
+        'translateY(' +
+        (window.innerHeight+80) +
+        'px) rotate(' +
+        (Math.random()*900-450) +
+        'deg)';
+
+      x.style.opacity = '0';
+
+    });
+
+    setTimeout(() => {
+
+      x.remove();
+
+    },4200);
+
+  }
+
+}
+
+
+/* ==============================
+   FIRST PAGE CLICK
+============================== */
+
+document.addEventListener(
+  "click",
+  function(){
 
     /*
-    Browser autoplay restrictions ke karan
-    music automatically force nahi kiya gaya.
-    User Music button se start kar sakte hain.
+      Browser autoplay restrictions
+      ke karan music automatically start
+      nahi kiya gaya.
     */
 
-}, { once: true });
+  },
+  {once:true}
+);
 
 </script>
 
